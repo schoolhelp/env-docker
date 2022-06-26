@@ -1,7 +1,5 @@
 FROM golang:1.18
 
-LABEL maintainer="Ving <ving@nivin.cn>"
-
 ENV GOPROXY https://goproxy.cn,direct
 
 # 安装必要的软件包和依赖包
