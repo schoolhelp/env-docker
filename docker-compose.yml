@@ -175,3 +175,16 @@ services:
     networks:
       - backend
     restart: always
+
+  rabbitmq:
+    build:
+      context: ./rabbitMQ
+    networks:
+      - backend
+    ports:
+      - "${RABBITMQ_WEB_PORT}:5672"
+      - "${RABBITMQ_HTTP_PORT}:15672"
+    environment:
+      TZ: Asia/Shanghai
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
